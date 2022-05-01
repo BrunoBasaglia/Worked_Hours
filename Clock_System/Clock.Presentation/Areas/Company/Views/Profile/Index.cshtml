@@ -1,0 +1,122 @@
+﻿@model Clock.Presentation.ViewModels.EmployerViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Company Profile</h4>
+                        <p class="card-category">Here your profile information</p>
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Profile" asp-action="Update" method="get">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Company Name</label>
+                                        <input type="text" asp-for="CompanyName" class="form-control" name="CompanyName" value="@Model.CompanyName" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">ABN</label>
+                                        <input type="text" class="form-control" asp-for="ABN" name="ABN" value="@Model.ABN" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Telephone</label>
+                                        <input type="tel" class="form-control" asp-for="Telephone" name="Telephone" value="@Model.Telephone" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Email address</label>
+                                        <input type="email" class="form-control" asp-for="Email" name="Email" value="@Model.Email" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Address</label>
+                                        <input type="text" class="form-control" asp-for="Address" name="Address" value="@Model.Address" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Suburb</label>
+                                        <input type="text" class="form-control" asp-for="Suburb" name="Suburb" value="@Model.Suburb" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">City</label>
+                                        <input type="text" class="form-control" asp-for="City.Name" name="City" value="@Model.City.Name" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">State</label>
+                                        <input type="text" class="form-control" asp-for="City.State.Name" name="State" value="@Model.City.State.Name" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Postal Code</label>
+                                        <input type="text" class="form-control" asp-for="ZipCode" name="ZipCode" value="@Model.ZipCode" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Rate</label>
+                                        <input type="text" class="form-control" name="Rate" value="@Model.Rate" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Payment Frequency</label>
+                                        <input type="text" class="form-control" name="PaymentFrequency" value="@Model.PaymentFrequency" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">PayDay</label>
+                                        <input type="text" class="form-control" name="PayDay" value="@Model.PayDay" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">PayBy</label>
+                                        <input type="text" class="form-control" name="PayBy" value="@Model.PayBy" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                            <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

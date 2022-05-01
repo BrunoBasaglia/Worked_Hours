@@ -1,0 +1,185 @@
+﻿@model Clock.Presentation.ViewModels.EmployerViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+<link href="~/lib/datatables/css/dataTables.material.css" rel="stylesheet" />
+@*<link href="~/lib/datatables/css/dataTables.bootstrap4.css" rel="stylesheet" />*@
+@*<link href="~/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />*@
+@*<link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />*@
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Employer Profile</h4>
+                        <p class="card-category">Here your employer information</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Company Name</label>
+                                    <input type="text" asp-for="CompanyName" class="form-control" name="CompanyName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">ABN</label>
+                                    <input type="text" asp-for="ABN" class="form-control" name="ABN" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Email address</label>
+                                    <input type="email" asp-for="Email" class="form-control" name="Email" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Telephone</label>
+                                    <input type="tel" asp-for="Telephone" class="form-control" name="Telephone" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Address</label>
+                                    <input type="text" asp-for="Address" class="form-control" name="Address" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Suburb</label>
+                                    <input type="text" asp-for="Suburb" class="form-control" name="Suburb" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group bmd-form-group is-filled">
+                                    <label asp-for="City" class="bmd-label-floating"></label>
+                                    <select asp-for="CityFk" asp-items="ViewBag.Cities" class="form-control" name="CityFk" readonly>
+                                        <option>Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">State</label>
+                                    <input type="text" asp-for="City.State.Name" class="form-control dropdown" name="City.State.Name" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="bmd-label-floating">Postal Code</label>
+                                    <input type="text" asp-for="ZipCode" class="form-control" name="ZipCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Worked Hours</h4>
+                <p class="card-category">Here your hours information</p>
+            </div>
+            <div class="card-body">
+                <div>
+                    @if (Model.Hours.Count == 0)
+                    {<table class="table">
+                            <tbody class=" text-primary">
+                                There are no hours Registered!
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <table class="table" id="tableHours">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th>
+                                        Company Name
+                                    </th>
+                                    <th>
+                                        Day
+                                    </th>
+                                    <th>
+                                        Start
+                                    </th>
+                                    <th>
+                                        Finish
+                                    </th>
+                                    <th>
+                                        Total
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var hour in Model.Hours)
+                                {
+                                <tr>
+                                    <td>@hour.Employer.CompanyName</td>
+                                    <td>@hour.Day.ToShortDateString()</td>
+                                    <td>@hour.Start.ToShortTimeString()</td>
+                                    <td>@hour.Finish.ToShortTimeString()</td>
+                                    <td>@hour.Hour <span>hours</span></td>
+                                    <td>@hour.Description</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+        @Html.ActionLink("Add Hours", "AddHours", null, new { id = Model.IdEmployer }, new { @class = "btn btn-primary pull-right" })
+        <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+
+@*<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>*@
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@*<script src="~/js/core/jquery.min.js"></script>*@
+<script src="~/js/plugins/jquery.dataTables.min.js"></script>
+@*<script src="~/lib/datatables/js/jquery.dataTables.js"></script>*@
+@*<script src="~/lib/datatables.net/jquery.dataTables.js"></script>*@
+@*<script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>*@
+@*<script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>*@
+
+@*  <script src="~/lib/datatables/js/dataTables.foundation.js"></script>
+    <script src="~/lib/datatables/js/dataTables.jqueryui.js"></script>*@
+<script src="~/lib/datatables/js/dataTables.material.js"></script>
+@*<script src="~/lib/datatables/js/dataTables.semanticui.js"></script>
+    <script src="~/lib/datatables/js/dataTables.uikit.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>*@
+
+
+<script>
+
+    $(document).ready(function () {
+        $('#tableHours').DataTable();
+    });
+
+</script>

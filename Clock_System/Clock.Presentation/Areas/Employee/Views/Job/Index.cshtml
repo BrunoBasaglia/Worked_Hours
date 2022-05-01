@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Clock.Presentation.ViewModels.EmployerViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">My Jobs</h4>
+                    <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+
+                        @if (Model == null)
+                        {
+                            <table class="table">
+                                <thead class="text-primary">
+                                    There are no Jobs Registered!
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td class="text-primary">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            @*<button type="button" onclick="location.href='@Url.Action("Create", "Dashboard/Job").Replace("%2F", "/")'" class="btn btn-primary pull-right">New Job</button>
+                            <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+                            <div class="clearfix"></div>*@
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>
+                                            Company Name
+                                        </th>
+                                        @*<th>
+                                                Telephone
+                                            </th>
+                                            <th>
+                                                ABN
+                                            </th>*@
+                                        <th>
+                                            Address
+                                        </th>
+                                        <th>
+                                            Suburb
+                                        </th>
+                                        <th>
+                                            Zip Code
+                                        </th>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                            State
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach (var job in Model)
+                                {
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @job.CompanyName
+                                            </td>
+                                            @*<td>
+                                                    @job.Telephone
+                                                </td>
+                                                <td>
+                                                    @job.ABN
+                                                </td>*@
+                                            <td>
+                                                @job.Address
+                                            </td>
+                                            <td>
+                                                @job.Suburb
+                                            </td>
+                                            <td>
+                                                @job.ZipCode
+                                            </td>
+                                            <td>
+                                                @job.City.Name
+                                            </td>
+                                            <td>
+                                                @job.City.State.Name
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", null, new { id = job.IdEmployer }, new { @class = "btn btn-sm btn-primary" })
+                                                @Html.ActionLink("Details", "Details", new { id = job.IdEmployer }, new { @class = "btn btn-sm btn-primary" })
+                                                @Html.ActionLink("Delete", "Delete", new { id = job.IdEmployer }, new { @class = "btn btn-sm btn-primary" })
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                }
+                            </table>
+                        }
+                        <button type="button" onclick="location.href='@Url.Action("Create", "Dashboard/Job").Replace("%2F", "/")'" class="btn btn-primary pull-right">New Job</button>
+                        <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

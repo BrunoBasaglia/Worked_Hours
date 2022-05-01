@@ -1,0 +1,158 @@
+﻿@model Clock.Presentation.ViewModels.EmployerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Company Profile</h4>
+                        <p class="card-category">Here your profile information</p>
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Profile" asp-action="Update" method="post">
+                            <div class="row">
+                                <div class="col-md-12 d-none">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">ID</label>
+                                        <input type="text" asp-for="IdEmployer" class="form-control" name="IdEmployer">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Company Name</label>
+                                        <input type="text" class="form-control" asp-for="CompanyName" name="CompanyName" value="@Model.CompanyName">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">ABN</label>
+                                        <input type="text" class="form-control" asp-for="ABN" name="ABN" value="@Model.ABN">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Telephone</label>
+                                        <input type="tel" class="form-control" asp-for="Telephone" name="Telephone" value="@Model.Telephone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Email address</label>
+                                        <input type="email" class="form-control" asp-for="Email" name="Email" value="@Model.Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Address</label>
+                                        <input type="text" class="form-control" asp-for="Address" name="Address" value="@Model.Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Suburb</label>
+                                        <input type="text" class="form-control" asp-for="Suburb" name="Suburb" value="@Model.Suburb">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group bmd-form-group is-filled">
+                                        <label asp-for="City" class="bmd-label-floating"></label>
+                                        <select asp-for="CityFk" asp-items="ViewBag.Cities" class="form-control" name="CityFk"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Postal Code</label>
+                                        <input type="text" class="form-control" asp-for="ZipCode" name="ZipCode" value="@Model.ZipCode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Rate</label>
+                                        <input type="text" class="form-control" asp-for="Rate" name="Rate" value="@Model.Rate">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group bmd-form-group is-filled">
+                                        <label class="bmd-label-floating">Payment Frequency</label>
+                                        @* <input type="text" class="form-control" asp-for="PaymentFrequency" name="PaymentFrequency" value="@Model.PaymentFrequency">*@
+                                        <select asp-for="PaymentFrequency" class="form-control" name="PaymentFrequency">
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Fortnightly">Fortnightly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group bmd-form-group is-filled">
+                                        <label class="bmd-label-floating">PayDay</label>
+                                        @*<input type="text" class="form-control" asp-for="PayDay" name="PayDay" value="@Model.PayDay">*@
+                                        <select asp-for="PayDay" class="form-control" name="PayDay">
+                                            <option value="Sunday">Sunday</option>
+                                            <option value="Monday">Monday</option>
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                            <option value="Friday">Friday</option>
+                                            <option value="Saturday">Saturday</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-md-3">
+                                    <div class="row is-filled">
+                                        @*<label class="col-sm-2 col-form-label label-checkbox">Inline checkboxes</label>*@
+                                        <label class="bmd-label-floating">PayBy</label>
+                                        <div class="form-check form-check-inline mt-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" asp-for="PayBy" name="PayBy" value="hour" checked=""> Hours
+                                                <span class="circle">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline mt-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" asp-for="PayBy" name="PayBy" value="job" checked=""> Job
+                                                <span class="circle">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                            <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

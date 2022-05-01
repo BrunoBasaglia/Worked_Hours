@@ -1,0 +1,9 @@
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\bin\Debug\netcoreapp3.1\Clock.Domain.deps.json
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\bin\Debug\netcoreapp3.1\Clock.Domain.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\bin\Debug\netcoreapp3.1\Clock.Domain.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.AssemblyInfo.cs
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Domain\obj\Debug\netcoreapp3.1\Clock.Domain.csprojAssemblyReference.cache

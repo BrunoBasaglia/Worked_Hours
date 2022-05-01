@@ -1,0 +1,9 @@
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\bin\Debug\netcoreapp3.1\Clock.Auth.deps.json
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\bin\Debug\netcoreapp3.1\Clock.Auth.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\bin\Debug\netcoreapp3.1\Clock.Auth.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.AssemblyInfo.cs
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Auth\obj\Debug\netcoreapp3.1\Clock.Auth.csprojAssemblyReference.cache

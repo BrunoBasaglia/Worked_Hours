@@ -1,0 +1,132 @@
+﻿
+@model Clock.Presentation.ViewModels.PersonViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Employee Profile</h4>
+                        <p class="card-category">Here your employee information</p>
+                    </div>
+                    @*<div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card-avatar">
+                                    <a href="javascript:;">
+                                        <img class="img" src="https://www.ericpereira.eu/wp-content/uploads/2017/01/business_cover.jpeg" height="128" width="125">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">First Name</label>
+                                    <input type="text" asp-for="Name" class="form-control" name="Name" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Surname</label>
+                                    <input type="text" asp-for="Surname" class="form-control" name="Surname" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Function</label>
+                                    <input type="text" asp-for="Function" class="form-control" name="Function" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">DOB</label>
+                                    <input type="text" asp-for="DOB" class="form-control" name="DOB" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Email address</label>
+                                    <input type="email" asp-for="Email" class="form-control" name="Email" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Telephone</label>
+                                    <input type="tel" asp-for="Telephone" class="form-control" name="Telephone" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">ABN</label>
+                                    <input type="text" asp-for="ABN" class="form-control" name="ABN" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Wages</label>
+                                    <input type="text" asp-for="Wages" class="form-control" name="Wages" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Address</label>
+                                    <input type="text" asp-for="Address" class="form-control" name="Address" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Suburb</label>
+                                    <input type="text" asp-for="Suburb" class="form-control" name="Suburb" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group bmd-form-group is-filled">
+                                    <label asp-for="City" class="bmd-label-floating"></label>
+                                    <select asp-for="CityFk" asp-items="ViewBag.Cities" class="form-control" name="CityFk" readonly>
+                                        <option>Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">State</label>
+                                    <input type="text" asp-for="City.State.Name" class="form-control" name="City.State.Name" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="bmd-label-floating">Postal Code</label>
+                                    <input type="text" asp-for="ZipCode" class="form-control" name="ZipCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+
+

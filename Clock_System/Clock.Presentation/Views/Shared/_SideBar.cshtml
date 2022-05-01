@@ -1,0 +1,213 @@
+﻿<div class="sidebar" data-color="purple" data-background-color="white" data-image="../../img/sidebar-1.jpg">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+    <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+           TARS
+        </a>
+    </div>
+
+    @if (User.IsInRole("Employer"))
+    {
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseOne">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">
+                                    <i class="material-icons">home</i>
+                                    <span class="sidebar-normal">Home</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Dashboard/Reports/Index">
+                                    <i class="material-icons">analytics</i>
+                                    <span class="sidebar-normal">Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="material-icons">business_center</i>
+                        <p>My Company</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseTwo">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Profile/Index">
+                                    <i class="material-icons">article</i>
+                                    <span class="sidebar-normal">Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Clients/Index">
+                                    <i class="material-icons">emoji_people</i>
+                                    <span class="sidebar-normal">Clients</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Employees/Index">
+                                    <i class="material-icons">people</i>
+                                    <span class="sidebar-normal">Employes</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Quotes/Index">
+                                    <i class="material-icons">request_quote</i>
+                                    <span class="sidebar-normal">Quotes</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Schedule/Index">
+                                    <i class="material-icons">calendar_today</i>
+                                    <span class="sidebar-normal">Schedule</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="material-icons">library_books</i>
+                        <p>Invoices</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseThree">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Profile/Index">
+                                    <i class="material-icons">trending_up</i>
+                                    <span class="sidebar-normal">Accounts Receivable</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Profile/Index">
+                                    <i class="material-icons">trending_down</i>
+                                    <span class="sidebar-normal">Accounts Payable</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item" hidden="hidden">
+                    <a class="nav-link" href="#">
+                        <i class="material-icons">bubble_chart</i>
+                        <p>Icons</p>
+                    </a>
+                </li>
+                <li class="nav-item" hidden="hidden">
+                    <a class="nav-link" href="#">
+                        <i class="material-icons">location_ons</i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li class="nav-item" hidden="hidden">
+                    <a class="nav-link" href="#">
+                        <i class="material-icons">notifications</i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <li class="nav-item" hidden="hidden">
+                    <a class="nav-link" href="#">
+                        <i class="material-icons">language</i>
+                        <p>RTL Support</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    }
+
+    @if (User.IsInRole("Employee"))
+    {
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseOne">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">
+                                    <i class="material-icons">home</i>
+                                    <span class="sidebar-normal">Home</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Dashboard/Reports/Index">
+                                    <i class="material-icons">analytics</i>
+                                    <span class="sidebar-normal">Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="material-icons">business_center</i>
+                        <p>My Profile</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseTwo">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Employee/Profile/Index">
+                                    <i class="material-icons">assignment_ind</i>
+                                    <span class="sidebar-normal">Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Employee/Job/Index">
+                                    <i class="material-icons">work</i>
+                                    <span class="sidebar-normal">Jobs</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="material-icons">library_books</i>
+                        <p>Invoices</p>
+                    </a>
+                    <div class="collapse ml-3" id="collapseThree">
+                        <ul class="nav mt-1">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Company/Profile/Index">
+                                    <i class="material-icons">trending_up</i>
+                                    <span class="sidebar-normal">Accounts Receivable</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+</div>

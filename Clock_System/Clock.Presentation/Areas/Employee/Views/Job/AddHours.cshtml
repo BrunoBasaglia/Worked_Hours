@@ -1,0 +1,222 @@
+﻿@model Clock.Presentation.ViewModels.HoursViewModel
+
+@{
+    ViewData["Title"] = "AddHours";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Update Profile</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 d-none">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Company Id</label>
+                                    <input type="text" asp-for="Employer.IdEmployer" class="form-control" name="IdEmployer" id="IdEmployer">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 d-none">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Employee Id</label>
+                                    <input type="text" asp-for="Person.IdPerson" class="form-control" name="IdPerson" id="IdPerson">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Company Name</label>
+                                    <input type="text" asp-for="Employer.CompanyName" class="form-control" name="CompanyName" id="CompanyName" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Day</label>
+                                    <input type="date" asp-for="Day" class="form-control" name="Day" id="Day">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Start</label>
+                                    <input type="time" asp-for="Start" class="form-control" name="Start" id="Start">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Finish</label>
+                                    <input type="time" asp-for="Finish" class="form-control" name="Finish" id="Finish">
+                                </div>
+                            </div>
+                            @*<div class="col-md-6">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Hours</label>
+                    <input type="text" asp-for="Hour" class="form-control" name="Hour" id="Hour">
+                </div>
+            </div>*@
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Description</label>
+                                    <textarea asp-for="Description" class="form-control" rows="5" name="Description" id="Description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary pull-right" onClick="AddHour()">Add</button>
+                        <button type="button" onclick="Back()" class="btn btn-dark">Cancel</button>
+                        <div class="clearfix"></div>
+                        <div id="divTable">
+                            <table class="table" id="tableHours">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>
+                                            Company Name
+                                        </th>
+                                        <th>
+                                            Day
+                                        </th>
+                                        <th>
+                                            Start
+                                        </th>
+                                        <th>
+                                            Finish
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <button id="send" type="button" class="btn btn-primary pull-right" onclick="SendHours()">Save</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    (function () {
+        divTable.setAttribute("hidden", "hidden");
+    })();
+
+    var listHours = new Array();
+
+    function SendHours() {
+        $.ajax({
+            url: '/Employee/Job/AddHours',
+            data: JSON.stringify(listHours),
+            type: 'POST',
+            traditional: true,
+            contentType: 'application/json',
+            success: function (listHours) {
+                $('#send').attr("hidden", true);
+                reset();
+                remove();
+                toastr.success('Your hours have been registered!');
+            }
+        });
+    }
+
+
+    function AddHour() {
+
+        var hours = {
+            IdEmployer: document.getElementById("IdEmployer").value,
+            IdPerson: document.getElementById("IdPerson").value,
+            CompanyName: document.getElementById("CompanyName").value,
+            Day: document.getElementById("Day").value,
+            Start: document.getElementById("Start").value,
+            Finish: document.getElementById("Finish").value,
+            //Hour: document.getElementById("Hour").value,
+            Description: document.getElementById("Description").value,
+        };
+
+        var tr = document.createElement("tr");
+
+        console.log(hours);
+
+        for (var cell in hours) {
+            var td = document.createElement("td");
+
+
+            console.log(cell);
+            if (cell != "IdEmployer") {
+                td.innerText = hours[cell];
+
+                td.setAttribute("class", cell);
+
+                //td.setAttribute("name", cell);
+                //td.setAttribute("asp-for", cell);
+
+                tr.appendChild(td);
+            }
+
+
+        }
+
+
+        listHours.push(hours);
+
+        var td5 = document.createElement("td");
+        var btn = document.createElement("button");
+        var t = document.createTextNode("Remove");
+        btn.appendChild(t);
+        btn.setAttribute("class", "btn btn-sm btn-primary");
+        btn.setAttribute("type", "button");
+        btn.setAttribute("onclick", "remove(this)");
+        td5.appendChild(btn);
+        tr.appendChild(td5);
+        tableHours.children[0].appendChild(tr);
+        divTable.removeAttribute("hidden");
+    }
+
+    function remove(row) {
+        var table = document.getElementById('tableHours');
+
+        table.deleteRow(row.parentNode.parentNode.rowIndex);
+
+        if (table.rows.length == 1) {
+            divTable.setAttribute("hidden", "hidden");
+        }
+
+        return false;
+    }
+
+    function remove() {
+        var table = document.getElementById('tableHours');
+
+        table.remove();
+
+        return false;
+    }
+
+
+    function reset() {
+        // document.getElementById("IdEmployer").innerText = "",
+        //document.getElementById("CompanyName").value;
+        //document.getElementById("Day").value,
+        document.getElementById("Start").value = 0;
+        document.getElementById("Finish").value = 0;
+        //document.getElementById("Hour").value = 0;
+        document.getElementById("Description").value = "";
+    }
+</script>
+

@@ -1,0 +1,15 @@
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Infra.deps.json
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Infra.runtimeconfig.json
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Infra.runtimeconfig.dev.json
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Infra.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Infra.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Domain.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\bin\Debug\netcoreapp3.1\Clock.Domain.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.csprojAssemblyReference.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.AssemblyInfo.cs
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.csproj.CopyComplete
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.dll
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.pdb
+C:\Users\Asus\Documents\Workspace\Worked_Hours\Clock_System\Clock.Infra\obj\Debug\netcoreapp3.1\Clock.Infra.genruntimeconfig.cache

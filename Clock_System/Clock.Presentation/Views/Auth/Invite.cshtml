@@ -1,0 +1,54 @@
+﻿@model Clock.Presentation.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Invite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Update Profile</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Auth" asp-action="Invite" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(r => r.FirstName, "", new { @class = "text-danger" })
+                                        <label class="bmd-label-floating">First Name</label>
+                                        <input type="text" asp-for="FirstName" class="form-control" name="FirstName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(r => r.LastName, "", new { @class = "text-danger" })
+                                        <label class="bmd-label-floating">Last Name</label>
+                                        <input type="text" asp-for="LastName" class="form-control" name="LastName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(r => r.Email, "", new { @class = "text-danger" })
+                                        <label class="bmd-label-floating">Email address</label>
+                                        <input type="email" asp-for="Email" class="form-control" name="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-right">Invite</button>
+                            <button type="button" onclick="Back()" class="btn btn-dark">Cancel</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Clock.Presentation.ViewModels.PersonEmployerViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/lib/datatables/css/dataTables.material.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">My Employees</h4>
+                    <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                    @*<div class="table-responsive">*@
+                    <div class="">
+                        @if (Model == null || Model.Count() == 0)
+                        {
+                            <table class="table">
+                                <thead class="text-primary">
+                                    There are no Employees Registered!
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <table class="table" id="employees">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Surname
+                                        </th>
+                                        <th>
+                                            Telephone
+                                        </th>
+                                        <th>
+                                            ABN/TFN
+                                        </th>
+                                        <th>
+                                            E-mail
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach (var employee in Model)
+                                {
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @employee.Person.Name
+                                            </td>
+                                            <td>
+                                                @employee.Person.Surname
+                                            </td>
+                                            <td>
+                                                @employee.Person.Telephone
+                                            </td>
+                                            <td>
+                                                @employee.Person.ABN
+                                            </td>
+                                            <td>
+                                                @employee.Person.Email
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Details", "Details", new { id = employee.IdPerson }, new { @class = "btn btn-sm btn-primary" })
+                                                @Html.ActionLink("Inactivate", "Inactivate", new { id = employee.IdPerson }, new { @class = "btn btn-sm btn-primary" })
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                }
+                            </table>
+                        }
+                        <button type="button" onclick="location.href='@Url.Action("Invite", "Auth").Replace("%2F", "/")'" class="btn btn-primary pull-right">Invite New</button>
+                        <button type="button" onclick="Back()" class="btn btn-dark">Back</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/plugins/jquery.dataTables.min.js"></script>
+<script src="~/lib/datatables/js/dataTables.material.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('#employees').DataTable({
+        });
+    });
+
+</script>

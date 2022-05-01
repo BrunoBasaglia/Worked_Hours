@@ -1,0 +1,163 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Clock.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Clock.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Clock.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clock.Application.dll": {}
+        }
+      },
+      "Clock.Auth/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Clock.Auth.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clock.Auth.dll": {}
+        }
+      },
+      "Clock.DI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Clock.Application": "1.0.0",
+          "Clock.Auth": "1.0.0",
+          "Clock.Infra": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Clock.DI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clock.DI.dll": {}
+        }
+      },
+      "Clock.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Clock.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clock.Domain.dll": {}
+        }
+      },
+      "Clock.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Clock.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Clock.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clock.Infra.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Clock.Application/1.0.0": {
+      "type": "project",
+      "path": "../Clock.Application/Clock.Application.csproj",
+      "msbuildProject": "../Clock.Application/Clock.Application.csproj"
+    },
+    "Clock.Auth/1.0.0": {
+      "type": "project",
+      "path": "../Clock.Auth/Clock.Auth.csproj",
+      "msbuildProject": "../Clock.Auth/Clock.Auth.csproj"
+    },
+    "Clock.DI/1.0.0": {
+      "type": "project",
+      "path": "../Clock.DI/Clock.DI.csproj",
+      "msbuildProject": "../Clock.DI/Clock.DI.csproj"
+    },
+    "Clock.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Clock.Domain/Clock.Domain.csproj",
+      "msbuildProject": "../Clock.Domain/Clock.Domain.csproj"
+    },
+    "Clock.Infra/1.0.0": {
+      "type": "project",
+      "path": "../Clock.Infra/Clock.Infra.csproj",
+      "msbuildProject": "../Clock.Infra/Clock.Infra.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Clock.Auth >= 1.0.0",
+      "Clock.DI >= 1.0.0",
+      "Clock.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Presentation\\Clock.Presentation.csproj",
+      "projectName": "Clock.Presentation",
+      "projectPath": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Presentation\\Clock.Presentation.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Auth\\Clock.Auth.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Auth\\Clock.Auth.csproj"
+            },
+            "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.DI\\Clock.DI.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.DI\\Clock.DI.csproj"
+            },
+            "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Domain\\Clock.Domain.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\Workspace\\Worked_Hours\\Clock_System\\Clock.Domain\\Clock.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    }
+  }
+}
